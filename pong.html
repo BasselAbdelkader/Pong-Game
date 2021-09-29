@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Ping Pong</title>
+</head>
+
+<body>
+	<h1>Ping Pong</h1>
+
+	<div class="wrapper">
+		<svg id="canvas">
+			<text id="player-one-scores" x="150" y="60" fill="black"></text>
+
+			<text id="player-two-scores" x="450" y="60" fill="black"></text>
+
+			<text id="info-panel" x="50" y="550" fill="black"></text>
+
+			<rect id="player-one"></rect>
+
+			<rect id="player-two"></rect>
+
+			<line x1="303" x2="297" y1="0" y2="600" stroke="orange" stroke-width="6" stroke-dasharray="5,5"
+				d="M5 20 l215 0" />
+
+			<circle id="circle" />
+		</svg>
+
+		<div>
+			<div class="entry entry--alt">
+				<h3>How to play it?</h3>
+
+				<ul>
+					<li>Start - Press Space</li>
+
+					<li>Move with Mouse - You can move rigth paddle top and bottom when mouse is over paddle</li>
+
+					<li>Move with Keyboard - Press Arrow Up or Arrow Down to move paddle</li>
+				</ul>
+			</div>
+
+			<div class="entry entry--alt">
+				<h3>Options</h3>
+			</div>
+
+			<div class="entry">
+				<div>
+					<label for="player-speed">Player Speed</label>
+
+					<input id="player-speed" type="number" min="1" max="5" value="1">
+				</div>
+
+				<span>*Minimum is 1, maximum - 5</span>
+			</div>
+
+			<div class="entry">
+				<div>
+					<label for="ball-speed">Ball Speed</label>
+
+					<input id="ball-speed" type="number" min="1" max="5" value="1">
+				</div>
+
+				<span>*Minimum is 1, maximum - 5</span>
+			</div>
+
+			<div class="entry">
+				<div>
+					<label for="max-scores">Max Scores</label>
+
+					<input id="max-scores" type="number" min="1" max="50" value="1">
+				</div>
+
+				<span>*Minimum is 1, maximum - 50</span>
+			</div>
+
+			<div class="entry">
+				<div>
+					<label for="paddle-width">Paddle Width</label>
+
+					<input id="paddle-width" type="number" min="1" max="500" value="1">
+				</div>
+
+				<span>*Minimum is 1, maximum - 500</span>
+			</div>
+
+			<div class="entry">
+				<div>
+					<label for="paddle-height">Paddle Height</label>
+
+					<input id="paddle-height" type="number" min="1" max="500" value="1">
+				</div>
+
+				<span>*Minimum is 1, maximum - 500</span>
+			</div>
+		</div>
+	</div>
+
+	<audio id="hit" src="./assets/hit.mp3"></audio>
+	<audio id="wall" src="./assets/wall.mp3"></audio>
+	<audio id="score" src="./assets/score.mp3"></audio>
+
+	<style>
+		body {
+			font-family: arial, helvetica, sans-serif;
+		}
+
+		h1 {
+			font-size: 38px;
+			font-family: arial, helvetica, sans-serif;
+		}
+
+		text {
+			font-size: 54px;
+		}
+
+		svg {
+			background-color: rgb(41, 41, 36);
+			position: relative;
+		}
+
+		.wrapper {
+			display: flex;
+		}
+
+		.entry {
+			margin: 20px;
+			text-align: center;
+		}
+
+		.entry--alt {
+			margin-bottom: 50px;
+			max-width: 350px;
+		}
+
+		.entry--alt ul {
+			text-align: left;
+		}
+
+		.entry--alt li+li {
+			margin-top: 15px;
+		}
+
+		input {
+			min-width: 70px;
+		}
+
+		span {
+			min-width: 220px;
+			display: inline-block;
+		}
+	</style>
+</body>
+
+</html>
